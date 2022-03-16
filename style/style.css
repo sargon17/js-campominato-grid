@@ -1,0 +1,235 @@
+/* ------------------ ROOT ----------------- */
+:root {
+  --mt-black: #161616;
+  --mt-blue: #7798ab;
+  --mt-green: #c3dbc5;
+  --mt-dark-green: #8ab98e;
+  --mt-red: #e35d6a;
+  --mt-clear-gray: #afafaf;
+  --mt-gray: #5b5b5b;
+  --mt-dark-gray: #2d2d2d;
+
+  --mt-fs-small: 1.618rem;
+  --mt-fs-medium: 2.618rem;
+  --mt-fs-large: 4.236rem;
+  --mt-fs-xlarge: 6.854rem;
+
+  --mt-ff-montserrat: "Montserrat", sans-serif;
+  --mt-ff-lora: "Lora", serif;
+  --mt-ff-hind-madurai: "Hind Madurai", sans-serif;
+
+  --mt-transition: all 0.25s cubic-bezier(0.31, 0.32, 0.13, 0.93);
+}
+/* ------------------ / ROOT ----------------- */
+
+/* ------------------ GENERAL STYLES ----------------- */
+.mt__bg--black {
+  background: var(--mt-black);
+}
+.mt__bg--blue {
+  background: var(--mt-blue);
+}
+.mt__bg--green {
+  background: var(--mt-green);
+}
+.mt__bg--red {
+  background: var(--mt-red);
+}
+.mt__bg--dark-gray {
+  background: var(--mt-dark-gray);
+}
+.mt__tc--clear-gray {
+  color: var(--mt-clear-gray);
+}
+.mt__tc--gray {
+  color: var(--mt-gray);
+}
+/* ------------------ / GENERAL STYLES ----------------- */
+
+* {
+  font-family: "Hind Madurai", "Montserrat", Arial, Helvetica, sans-serif;
+  color: var(--mt-clear-gray);
+  font-size: 14px;
+}
+
+body {
+  background: var(--mt-black);
+}
+
+/* ------------------ SECTIONS ----------------- */
+/* TITLE */
+.mt__main-title {
+  font-family: var(--mt-ff-montserrat);
+  font-size: var(--mt-fs-xlarge);
+}
+/* / TITLE */
+
+/* GAME BOX */
+.mt__game-box {
+  max-width: 825px;
+  height: 85vh;
+  aspect-ratio: 1;
+  background: var(--mt-dark-gray);
+  border-radius: 10px;
+  border: 10px solid var(--mt-dark-gray);
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+/* / GAME BOX */
+
+/* GAME CARD */
+.mt__game-card {
+  aspect-ratio: 1;
+  background: var(--mt-green);
+  border: 1px solid var(--mt-dark-green);
+  padding: 5px 10px;
+  transition: var(--mt-transition);
+  cursor: pointer;
+  position: relative;
+}
+.mt__game-card--100 {
+  width: 10%;
+}
+.mt__game-card--81 {
+  width: calc(100% / 9);
+}
+.mt__game-card--49 {
+  width: calc(100% / 7);
+}
+.mt__game-card:hover {
+  background: var(--mt-dark-green);
+}
+.mt__bomb {
+  background: var(--mt-red);
+}
+.mt__bomb:hover {
+  background: #bf4f5a;
+}
+.mt__safe {
+  background: var(--mt-blue);
+}
+.mt__safe:hover {
+  background: var(--mt-blue);
+}
+.mt__game-card__text {
+  color: var(--mt-black);
+}
+.bomb-number {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: var(--mt-fs-medium);
+}
+.bomb-number--0 {
+  color: transparent;
+}
+.bomb-number--1 {
+  color: yellow;
+}
+.bomb-number--2 {
+  color: orange;
+}
+.bomb-number--3 {
+  color: orangered;
+}
+.bomb-number--4 {
+  color: red;
+}
+.bomb-number--5 {
+  color: red;
+}
+.bomb-number--6 {
+  color: red;
+}
+/* / GAME CARD */
+
+/* SIDE BARs */
+/* Right */
+.sidebar {
+  max-width: 400px;
+  width: 25vw;
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  transform: translate(0%, -50%);
+  padding: 5px;
+}
+.sidebar__title {
+  font-family: var(--mt-ff-lora);
+  font-size: var(--mt-fs-medium);
+  margin: 20px 0;
+}
+@media screen and (max-width: 1270px) {
+  .sidebar {
+    width: 18vw;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .sidebar {
+    display: none;
+  }
+}
+/* / Right */
+
+/* Left */
+.left-sidebar {
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  transform: translate(0%, -50%);
+}
+.sidebar__percentage {
+  font-family: var(--mt-ff-montserrat);
+  font-size: var(--mt-fs-large);
+  line-height: 0.8em;
+  margin: 0;
+}
+.sidebar__percentage span {
+  font-family: var(--mt-ff-lora);
+  font-size: var(--mt-fs-small);
+  color: var(--mt-gray);
+}
+.sidebar__percentage-over {
+  color: var(--mt-dark-green);
+}
+.sidebar__tag {
+  margin: 0;
+}
+/* / Left */
+/* / SIDE BARs */
+
+/* GAME OVER SECTION */
+.game-over-section {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #161616c1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-over-card {
+  background: var(--mt-black);
+  width: 30vw;
+  height: 20vh;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.game-over-text {
+  font-size: var(--mt-fs-large);
+  font-weight: 700;
+  font-family: var(--mt-ff-montserrat);
+  color: var(--mt-red);
+}
+.game-over-text--win {
+  color: var(--mt-dark-green);
+}
+/* / GAME OVER SECTION */
+/* ------------------ / SECTIONS ----------------- */
